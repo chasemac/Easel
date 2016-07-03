@@ -82,7 +82,7 @@ class DrawingViewController: UIViewController {
         
         
         CGContextSetLineCap(context, .Round)
-        CGContextSetLineWidth(context, brushSize)
+        CGContextSetLineWidth(context, CGFloat(40 * brushSliderValue))
         
         CGContextStrokePath(context)
         

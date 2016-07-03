@@ -9,4 +9,3 @@
 import UIKit
 
 var brushSliderValue: Float = 0.5
-var brushSize: CGFloat = 40 * (CGFloat(brushSliderValue))

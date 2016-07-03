@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
     
     weak var drawingVC : DrawingViewController? = nil
     @IBOutlet weak var sliderBrushSize: UISlider!
-    var currentValue: Float = 0.5
+    var newValue: Float = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,11 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
         sliderBrushSize.value = brushSliderValue
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        brushSliderValue = newValue
+       
     }
     
     @IBAction func eraseTapped(sender: AnyObject) {
@@ -38,6 +43,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func valueChanged(sender: AnyObject) {
-        print(sliderBrushSize.value)
+        newValue = sliderBrushSize.value
+        //print(newValue)
     }
 }
